@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Shopping cart</title>
+</head>
+
+<body>
+  <nav>
+    <div class="container">
+      <div class="top-navbar">
+        <ul class="nav-links">
+          <li class="brand-name"><a href="">Pcodel</a></li>
+          <li><a href="">Delivery</a></li>
+        </ul>
+        <div class="cart">
+          <i class="fas fa-cart-arrow-down"></i>
+          <span class="cartNumber">0</span>
+        </div>
+      </div>
+
+      <div class="cart-details">
+        <form name="cartDetailsForm">
+          <ul class="products-in-cart"></ul>
+          <div class="total-price"></div>
+          <input type="submit" id="calculate-total" value="Calculate Total">
+        </form>
+        <div class="cart-empty">Cart is Empty! <i class="fas fa-cart-plus" style="font-size: 1.2rem; margin: 0 10px; color: #444"></i></div>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container">
+    <div class="filter">
+      <h4>Filter</h4>
+      <ul class="filter-list">
+        <li data-filter-type="all">All</li>
+        <li data-filter-type="fruit">Fruits</li>
+        <li data-filter-type="vegetation">Vegetation</li>
+        <li data-filter-type="clothe">Clothes</li>
+        <li data-filter-type="shoes">Shoes</li>
+        <li data-filter-type="furnisher">Furnisher</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <h2 class="page-title">All Products</h2>
+    <div class="search">
+      <input type="search" name="" id="searchEl" placeholder="Search Product">
+      <input type="submit" value="Search" id="searchBtn">
+    </div>
+
+    <div class="products-list">
+      <div class="product-item" data-product-type="fruit" data-product-name="Orange" data-product-price="2.6">
+        <div class="thumbnail">
+          <img src="orange vlc.png" alt="Image">
+        </div>
+        <div class="info">
+          <div class="product-name">Orange</div>
+          <div class="product-price">$2.6</div>
+          <button class="add-to-cart">Add to cart</button>
+        </div>
+      </div>
+
+      <div class="product-item" data-product-type="fruit" data-product-name="Strawberry" data-product-price="4.9">
+        <div class="thumbnail">
+          <img src="strawbery vlc.png" alt="Image">
+        </div>
+        <div class="info">
+          <div class="product-name">Strawberry</div>
+          <div class="product-price">$4.9</div>
+          <button class="add-to-cart">Add to cart</button>
+        </div>
+      </div>
+
+      <div class="product-item" data-product-type="fruit" data-product-name="Banana" data-product-price="3.8">
+        <div class="thumbnail">
+          <img src="banana vlc.png" alt="Image">
+        </div>
+        <div class="info">
+          <div class="product-name">Banana</div>
+          <div class="product-price">$3.8</div>
+          <button class="add-to-cart">Add to cart</button>
+        </div>
+      </div>
+
+      <div class="product-item" data-product-type="vegetation" data-product-name="Leaf" data-product-price="12.5">
+        <div class="thumbnail">
+          <img src="leaf.jpg" alt="Image">
+        </div>
+        <div class="info">
+          <div class="product-name">Leaf</div>
+          <div class="product-price">$12.5</div>
+          <button class="add-to-cart">Add to cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="app.js"></script>
+</body>
+
+</html>

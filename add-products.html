@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Shopping cart</title>
+  <style>
+    #add-product {
+      padding: 10px;
+      margin: 20px 0;
+      border: 1px solid #ccc;
+    }
+
+    #add-product input {
+      max-width: 220px;
+      padding: 4px 8px;
+      margin: 5px;
+    }
+
+    #add-product input[type='submit'] {
+      display: block;
+      width: initial;
+      padding: 4px 15px;
+      margin-top: 20px;
+      margin-left: 40px;
+    }
+
+    #add-product h4 {
+      margin: 0 0 10px;
+      cursor: pointer;
+    }
+    select {
+      padding: 3px 8px;
+      border: 1px solid #ccc;
+      outline: none;
+      border-radius: 4px;
+      margin: 5px;
+    }
+
+    option {
+      padding: 5px 10px;
+      border: 2px solid red;
+      outline: none;
+      /* margin: 5px; */
+      border-radius: 4px;
+    }
+
+    label {
+      margin: 8px;
+      margin-bottom: -2px;
+      display: block;
+    }
+
+    .product-thumb {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="container">
+      <div class="top-navbar">
+        <ul class="nav-links">
+          <li class="brand-name"><a href="index.html">Pcodel</a></li>
+          <li><a href="#">Delivery</a></li>
+          <li class="add-products"><a href="#">Add products</a></li>
+        </ul>
+        <div class="cart"><a href="#">
+            <i class="fas fa-cart-arrow-down"></i>
+            <!-- <span class="cartNumber">0</span> -->
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <div class="container">
+    <h1>Admin</h1>
+    <form action="#" id="add-product">
+      <h4>Add Product</h4>
+      <!-- <input type="text" id="add-product-type" placeholder="Product Type"> -->
+
+      <div>
+        <label for="product-type">Product Type</label>
+        <select id="product-type">
+          <option value="fruit">Fruit</option>
+          <option value="vegetation">Vegetation</option>
+          <option value="clothe">Clothe</option>
+          <option value="shoes">Shoes</option>
+          <option value="furnisher">Furnisher</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <input type=" text" id="add-product-name" placeholder="Product Name">
+      <input type="number" id="add-product-price" min="5" placeholder="Product Price in $">
+
+
+
+      <div class="product-thumb">
+        <label for="product-image">Product Image</label>
+        <input type="file" id="add-product-image">
+      </div>
+
+      <input type="submit" value="Add product">
+    </form>
+
+
+    <div class="notification">
+      <p>A product added successfully!</p>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
