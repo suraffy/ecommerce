@@ -55,14 +55,8 @@ const products = [
     thumbnail: "banana vlc.png",
   },
   {
-    type: "fruit",
-    name: "Leaft",
-    price: 0.6,
-    thumbnail: "leaf.jpg",
-  },
-  {
-    type: "fruit",
-    name: "Leaft",
+    type: "vegetation",
+    name: "Leaf",
     price: 0.6,
     thumbnail: "leaf.jpg",
   },
@@ -76,7 +70,7 @@ function addProducts(product) {
   productsList.insertAdjacentHTML(
     "beforeend",
     `
-  <div class="product-item" data-product-type="${product.type}" data-product-name="${product.name}" data-product-price=${product.price}>
+  <div class="product-item" data-product-type="${product.type}" data-product-name="${product.name}" data-product-price="${product.price}">
   <div class="thumbnail">
     <img src="${product.thumbnail}" alt="${product.name} Image">
   </div>
@@ -94,8 +88,8 @@ cart.addEventListener("click", () => {
   cartDetails.classList.toggle("show-cart-details");
 });
 
-function filterProducts() {
-  const filterEl = event.target;
+function filterProducts(e) {
+  const filterEl = e.target;
   if (filterEl.tagName !== "LI") return;
 
   filterEl.classList.toggle("filterBgColor");
@@ -109,16 +103,28 @@ function filterProducts() {
   }
 
   if (filterValues.has("all") || filterValues.size === 0) {
-    for (product of productItems) product.style.display = "block";
+    // for (product of productItems) product.style.display = "block";
+    while (productsList.hasChildNodes()) {
+      productsList.removeChild(productsList.firstChild);
+    }
+
+    for (let product of products) {
+      addProducts(product);
+    }
+
+    // return;
+    // for (product of products) product.style.display = "block";
     pageTitle.textContent = "All Products";
     return;
   }
 
-  for (product of productItems) {
-    if (filterValues.has(product.getAttribute("data-product-type"))) {
-      product.style.display = "block";
-    } else {
-      product.style.display = "none";
+  while (productsList.hasChildNodes()) {
+    productsList.removeChild(productsList.firstChild);
+  }
+
+  for (product of products) {
+    if (filterValues.has(product.type)) {
+      addProducts(product);
     }
   }
 
@@ -134,16 +140,41 @@ function filterProducts() {
 function searchProducts() {
   const searchPatt = new RegExp(searchEl.value, "i");
 
-  for (product of productItems) {
-    const productName = product.getAttribute("data-product-name");
+  if (searchEl.value === "") {
+    while (productsList.hasChildNodes()) {
+      productsList.removeChild(productsList.firstChild);
+    }
 
+    for (let product of products) {
+      if (!filterValues.size || filterValues.has(product.type)) {
+        addProducts(product);
+      }
+    }
+
+    return;
+  }
+
+  if (searchEl.value) {
+    while (productsList.hasChildNodes()) {
+      productsList.removeChild(productsList.firstChild);
+    }
+  }
+
+  for (product of products) {
     if (
-      searchPatt.test(productName) &&
-      (!filterValues.size ||
-        filterValues.has(product.getAttribute("data-product-type")))
+      searchPatt.test(product.name) &&
+      (!filterValues.size || filterValues.has(product.type))
     ) {
-      product.style.display = "block";
-    } else product.style.display = "none";
+      addProducts(product);
+    }
+
+    // if (
+    //   searchPatt.test(productName) &&
+    //   (!filterValues.size ||
+    //     filterValues.has(product.getAttribute("data-product-type")))
+    // ) {
+    //   product.style.display = "block";
+    // } else product.style.display = "none";
   }
 }
 
