@@ -290,6 +290,8 @@ function addToCart(event) {
           break;
         }
       }
+
+      calcTotal();
     }
 
     cartNumber.textContent = cartNumValue;
@@ -307,8 +309,8 @@ function addToCart(event) {
   }
 }
 
-function calcTotal(event) {
-  event.preventDefault();
+function calcTotal(e) {
+  if (e) e.preventDefault();
 
   let total = 0;
   for (product of productsInCart.children) {
