@@ -1,12 +1,3 @@
-// simple e-shopping - Design HTML, CSS | Part 1 of 3
-// Implementing filter and search, JS DOM - simple e-shopping | Part 2 of 3
-// Adding products to cart, JS DOM - simple e-shopping | Part 3 of 3
-////// Features //////
-// Filter
-// Search
-// Add products to cart, show number of products in cart
-// Display products in cart, and calculate the total
-
 const filterList = document.querySelector(".filter-list");
 const pageTitle = document.querySelector(".page-title");
 
@@ -14,7 +5,6 @@ const searchEl = document.getElementById("searchEl");
 const searchBtn = document.getElementById("searchBtn");
 
 const productsList = document.querySelector(".products-list");
-const productItems = document.querySelectorAll(".product-item");
 
 const cart = document.querySelector(".cart");
 const cartNumber = document.querySelector(".cartNumber");
