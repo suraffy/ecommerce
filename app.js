@@ -37,28 +37,106 @@ cartForm.addEventListener("submit", calcTotal);
 
 const products = [
   {
+    type: "cloth",
+    name: "T-shirt",
+    price: 3.99,
+    picture: "t-shirt.jpg",
+  },
+  {
+    type: "cloth",
+    name: "Shirt",
+    price: 11.59,
+    picture: "shirt.jpg",
+  },
+  {
+    type: "cloth",
+    name: "Jeans",
+    price: 8.99,
+    picture: "jeans.jpg",
+  },
+  {
+    type: "cloth",
+    name: "Short",
+    price: 7.59,
+    picture: "short.jpg",
+  },
+  {
+    type: "cloth",
+    name: "Sweater",
+    price: 7.59,
+    picture: "sweater.jpg",
+  },
+  {
+    type: "furniture",
+    name: "Couch",
+    price: 48.99,
+    picture: "couch.jpg",
+  },
+  {
+    type: "furniture",
+    name: "Dinning table",
+    price: 22.99,
+    picture: "dinning table.jpg",
+  },
+  {
+    type: "furniture",
+    name: "TV stand",
+    price: 35.99,
+    picture: "tv stand.jpg",
+  },
+  {
+    type: "furniture",
+    name: "Book Shelf",
+    price: 35.99,
+    picture: "book shelf.jpg",
+  },
+  {
     type: "fruit",
     name: "Orange",
-    price: 2.6,
-    thumbnail: "orange vlc.png",
+    price: 2.69,
+    picture: "orange.jpg",
   },
   {
     type: "fruit",
     name: "Strawbery",
     price: 2.99,
-    thumbnail: "strawbery vlc.png",
+    picture: "strawbery.jpg",
   },
   {
     type: "fruit",
     name: "Banana",
     price: 1.99,
-    thumbnail: "banana vlc.png",
+    picture: "banana.jpg",
   },
   {
-    type: "vegetation",
-    name: "Leaf",
-    price: 0.6,
-    thumbnail: "leaf.jpg",
+    type: "fruit",
+    name: "Apple",
+    price: 3.69,
+    picture: "apple.jpg",
+  },
+  {
+    type: "fruit",
+    name: "Pineapple",
+    price: 2.79,
+    picture: "pineapple.jpg",
+  },
+  {
+    type: "fruit",
+    name: "Watermelon",
+    price: 1.49,
+    picture: "watermelon.jpg",
+  },
+  {
+    type: "vegetable",
+    name: "Lettuce",
+    price: 0.69,
+    picture: "lettuce.jpg",
+  },
+  {
+    type: "vegetable",
+    name: "Spinach",
+    price: 0.69,
+    picture: "spinach.jpg",
   },
 ];
 
@@ -71,8 +149,8 @@ function addProducts(product) {
     "beforeend",
     `
   <div class="product-item" data-product-type="${product.type}" data-product-name="${product.name}" data-product-price="${product.price}">
-  <div class="thumbnail">
-    <img src="${product.thumbnail}" alt="${product.name} Image">
+  <div class="picture">
+    <img src="img/${product.picture}" alt="${product.name} Image" with="640">
   </div>
   <div class="info">
     <div class="product-name">${product.name}</div>
