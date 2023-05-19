@@ -152,15 +152,15 @@ li.brand-name a {
 
 .product-item {
   width: 300px;
-  margin: 10px 5px;
+  margin: 30px 5px;
   border: 1px solid #eee;
   border-radius: 5px;
   background-color: #fff;
 }
 
-.product-item .thumbnail {
+.product-item .picture {
   width: 100%;
-  height: 150px;
+  height: 200px;
   overflow: hidden;
   border-radius: 5px 5px 0 0;
 }
@@ -178,6 +178,7 @@ li.brand-name a {
 }
 
 .product-item .info {
+  margin-top: 20px;
   padding: 10px 15px;
   font-size: 1.1rem;
 }
