@@ -271,3 +271,21 @@ li.brand-name a {
     background-color: #fff;
   }
 }
+
+
+footer {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.copyright-info {
+  margin-top: 50px;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+  border: 0;
+  border-bottom: 1px solid #e4e4e4;
+}
